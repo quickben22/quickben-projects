@@ -1,41 +1,21 @@
-# Quickben — Independent Developer
+# Quickben portfolio
 
-Source for the static portfolio site deployed at <https://quickben-projects.web.app/>.
+Plain HTML, CSS and JavaScript portfolio with a responsive modern design.
 
-> **Note:** this repository is a reconstruction of the live site. The original source was not present on the local machine, so these files were recovered from the public deployment on 2026-11-21. They reproduce the currently deployed HTML, CSS and JavaScript.
-
-## Files
-
-- `public/index.html` — single-page portfolio (Work / About / Contact)
-- `public/privacy.html` — privacy policy page
-- `public/styles.css` — all styling, including responsive breakpoints
-- `public/script.js` — footer year and mobile menu toggle
-- `firebase.json` / `.firebaserc` — Firebase Hosting config targeting project `quickben-projects`
-
-## Local preview
-
-Serve the `public` folder with any static server, e.g.:
-
-```powershell
-cd public
-npx serve .
-```
-
-Or Python:
-
-```bash
-cd public
-python -m http.server 8080
-```
-
-Then open <http://localhost:8080/>.
+## Before publishing
+- Replace `public/app-ads.txt` with the exact seller authorization line shown in your AdMob account.
+- Review `public/privacy.html` and make it accurate for your actual app, AdMob SDK, consent flow and data practices. Do not publish the draft unchanged.
+- Check the public contact email and update it if needed.
 
 ## Deploy to Firebase Hosting
+Install Node.js, then run from this folder:
 
 ```bash
 npm install -g firebase-tools
 firebase login
+firebase projects:list
+firebase use --add
 firebase deploy --only hosting
 ```
 
-The project ID in `.firebaserc` is `quickben-projects`. Deploying will overwrite the current live site, so preview locally first.
+Select your Firebase project when prompted. Test `/`, `/privacy.html` and `/app-ads.txt` on the resulting `PROJECT_ID.web.app` address.
