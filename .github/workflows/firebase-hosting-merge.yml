@@ -5,13 +5,13 @@ name: Deploy to Firebase Hosting on merge
 on:
   push:
     branches:
-      - quickben22/webpage
+      - master
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: no
+      - run: echo "No build step required — site is plain HTML/CSS/JS"
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
